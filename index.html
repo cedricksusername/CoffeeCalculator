@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Calculator</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="media/img/ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="media/img/ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="media/img/ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="media/img/ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="media/img/ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="media/img/ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="media/img/ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="media/img/ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="media/img/ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="media/img/ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="media/img/ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="media/img/ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="media/img/ico/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#0c0808">
+    <meta name="msapplication-TileImage" content="media/img/ico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#0c0808">
+    <link rel="stylesheet" href="style/main.css">
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="input">
+            <p>Amount of Water (ml): </p><input type="number" name="Water Amount" id="water-amount" value="500">
+            <p>Coffee g/L: </p><input type="number" name="Grams per Litre" id="coffee-amount" value="65">
+            <div class="button" onclick="getResults()">Calculate</div>
+        </div>
+        <div class="results-container" id="results-container">
+            <div class="results" id="results"><p>You need:</p><div class="results-number" id="results-number">00g</div></div>
+            <div id="results-click-detector" onclick="closeResults()"></div>
+        </div>
+    </div>
+</body>
+</html>
