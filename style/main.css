@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;700&display=swap');
 
 body {
-    background-color: #0c0808;
+    background-color: rgb(12, 12, 12);
     color: white;
     font-family: 'Golos Text', sans-serif;
     font-size: 8vw;
@@ -13,18 +13,18 @@ body {
     display: grid;
     height: 100vh;
     grid-template-rows: 1fr auto 1fr;
+    grid-template-columns: 1fr auto 1fr;
 }
 
 .input {
-    grid-row-start: 2;
     display: grid;
     justify-content: center;
-    grid-template: 
-                "a" auto
-                "a" auto
-                "a" auto
-                "a" auto
-                "a" auto;
+    background-color: rgb(12, 12, 12);
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    border-radius: 20px;
 }
 
 input[type=number] {
@@ -44,6 +44,10 @@ input[type=number] {
     align-self: center;
 }
 
+input::-webkit-inner-spin-button {
+    display: none;
+}
+
 .button {
     margin: 1em;
     background-color: white;
@@ -55,7 +59,7 @@ input[type=number] {
 }
 
 .button:active {
-    background-color: rgb(219, 219, 219);
+    background-color: rgb(220, 220, 220);
 }
 
 .button:hover {
@@ -76,12 +80,11 @@ input[type=number] {
     grid-column-start: 2;
     grid-row-start: 2;
     display: grid;
-    grid-template-rows: 1fr 2fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr 2fr 1fr;
     background-color: black;
     border-radius: 40px;
     z-index: 10;
     border: 0.4vw solid white;
-    padding: 5%;
     align-content: center;
 }
 
@@ -111,11 +114,141 @@ input[type=number] {
     cursor: pointer;
 }
 
+/* Menu */
+
+.menu {
+    position: fixed;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: fit-content;
+    height: 2em;
+}
+
+.menu .material-icons {
+    font-size: 2em;
+}
+
+.history-button, .settings-button {
+    cursor: pointer;
+    margin: 0.5em;
+}
+
+.history-button {
+    text-align: left;
+}
+
+.settings-button {
+    grid-column-start: 2;
+    text-align: right;
+    display: none;
+}
+
+.history-container {
+    display: none;
+    font-size: 2rem;
+}
+
+.history {
+    position: fixed;
+    z-index: 30;
+    height: 100vh;
+    width: 70vw;
+    background-color: rgb(19, 19, 19);
+    padding: 0 1em;
+    overflow: scroll;
+}
+
+.history-background {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: 20;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.history-info {
+    color: rgb(78, 78, 78);
+    cursor: default;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    font-size: 1.4rem;
+    font-style: italic;
+}
+
+#history-module {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: black;
+    padding: 0.5em;
+    border-radius: 10px;
+    margin: 0.5em;
+}
+
+#history-number {
+    color: rgb(44, 44, 44);
+    text-align: left;
+    font-size: 0.7em;
+}
+
+#history-delete {
+    grid-column-start: 3;
+    text-align: right;
+    color: rgb(44,44,44);
+    cursor: pointer;
+}
+
+#history-delete:hover {
+    color: rgb(73, 73, 73);
+}
+
+#history-delete .material-icons {
+    font-size: 1em;
+}
+
+#history-amount {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    font-weight: 700;
+    font-size: 1.5em;
+    text-align: center;
+}
+
 /* Desktop */
+
+@media screen and (min-width: 40rem) {
+    body {
+        font-size: 3.5em;
+        background-color: rgb(12, 12, 12);
+    }
+
+    .results-container {
+        width: 100vw;
+    }
+
+    .results {
+        width: auto;
+    }
+
+    .results p {
+        font-size: 6rem;
+    }
+
+    .results-number {
+        font-size: 7rem;
+    }
+}
+
+.input p {
+    font-size: 2.8rem;
+}
 
 @media screen and (min-width: 65rem) {
     body {
-        font-size: 3vw;
+        font-size: 3em;
+        background-color: black;
     }
 
     .results-container {
@@ -128,10 +261,48 @@ input[type=number] {
     }
 
     .results p {
-        font-size: 5vw;
+        font-size: 4rem;
     }
 
     .results-number {
-        font-size: 6vw;
+        font-size: 6rem;
     }
+
+    .history {
+        width: 33vw;
+    }
+
+    .history-list {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media screen and (min-width: 135rem) {
+    body {
+        font-size: 4em;
+        background-color: black;
+    }
+
+    .results-container {
+        width: 100vw;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .results {
+        width: auto;
+    }
+
+    .results p {
+        font-size: 2em;
+    }
+
+    .results-number {
+        font-size: 3em;
+    }
+
+    .history {
+        width: 25vw;
+    }
+
 }
