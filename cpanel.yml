@@ -1,5 +1,3 @@
-##### THIS ALLOWS US TO DEPLOY THE SITE FROM A GIT REPO ######
----
 deployment:
   tasks:
     - export DEPLOYPATH=/home/cedrzpjh/public_html/cafe/
@@ -9,5 +7,4 @@ deployment:
     - /bin/cp -R fonts $DEPLOYPATH
     - /bin/cp -R img $DEPLOYPATH
     - /bin/cp -R js $DEPLOYPATH
-    /bin/cp index.html $DEPLOYPATH
-
+    - /bin/cp index.html $DEPLOYPATH
